@@ -1,6 +1,6 @@
 
 FROM oziproject/supported-python:2023
-COPY . .
+COPY pyc_wheel /pyc_wheel
 COPY action.sh .
 RUN chmod +x action.sh
 RUN set -ex \
