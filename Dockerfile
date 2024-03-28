@@ -8,6 +8,6 @@ RUN set -ex \
   && apt-get install -y --no-install-recommends git \
   && rm -rf /var/lib/apt/lists/* \
   && rm -f /var/cache/apt/archives/*.deb
-RUN /root/.pyenv/versions/$(/root/.pyenv/bin/pyenv latest 3.10)/bin/python -m venv .venv
-ENTRYPOINT bash -c "source .venv/bin/activate && python -m pip install . && bash action.sh"
+RUN /root/.pyenv/versions/$(/root/.pyenv/bin/pyenv latest 3.10)/bin/python -m pip install .
+ENTRYPOINT ["bash", "action.sh"]
 
