@@ -1,7 +1,7 @@
 
 FROM oziproject/supported-python:2023
-COPY action.sh .
-RUN chmod +x action.sh
+COPY action.sh /action.sh
+RUN chmod +x /action.sh
 RUN set -ex \
   && apt-get update \
   && apt-get install -y --no-install-recommends git \
@@ -10,4 +10,3 @@ RUN set -ex \
 RUN git clone https://github.com/OZI-Project/pyc_wheel /pyc_wheel
 RUN /root/.pyenv/versions/$(/root/.pyenv/bin/pyenv latest 3.10)/bin/python -m pip install ./pyc_wheel
 ENTRYPOINT ["/action.sh"]
-
