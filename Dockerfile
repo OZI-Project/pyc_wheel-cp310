@@ -9,5 +9,5 @@ RUN set -ex \
   && rm -f /var/cache/apt/archives/*.deb
 RUN git clone https://github.com/OZI-Project/pyc_wheel /pyc_wheel
 RUN /root/.pyenv/versions/$(/root/.pyenv/bin/pyenv latest 3.10)/bin/python -m pip install ./pyc_wheel
-ENTRYPOINT ["bash", "action.sh"]
+ENTRYPOINT ["/action.sh"]
 
